@@ -4,7 +4,9 @@ module "aws-dev" {
   regiao_aws = "us-east-2"
   chave      = "Key-IaC-Dev"
   instancia   = "t3.micro"
-}
-output "IP_publico_dev" {
-  value = module.aws-dev.IP_publico # Exibe o IP público da instância no ambiente de desenvolvimento
+  grupo_de_seguranca = "DEV"  # Nome do grupo de segurança para o ambiente de desenvolvimento
+  minimo       = 1            # Número mínimo de instâncias no ASG 
+  maximo       = 1            # Número máximo de instâncias no ASG
+  nomeGrupoASG = "ASG-Dev"    # Nome do grupo de Auto Scaling
+  producao = true             # Variável para indicar ambiente de produção (false para Dev) 
 }

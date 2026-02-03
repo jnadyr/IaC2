@@ -1,7 +1,6 @@
 resource "aws_security_group" "grupo_de_seguranca" {
-  name        = "grupo-de-seguranca" # Nome do grupo de segurança
-  description = "Grupo do Dev" # Descrição do grupo de segurança
-
+  name        = var.grupo_de_seguranca  # Nome do grupo de segurança
+  description = "Grupo de seguranca para acesso SSH e porta 8000"
 ingress {
     from_port   = 22
     to_port     = 22
@@ -18,7 +17,7 @@ ingress {
     protocol    = "tcp"
 
     }
-
+  
 egress {
     cidr_blocks = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
