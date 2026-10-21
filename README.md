@@ -1,2 +1,2 @@
-Infraestrutura como código:
-Separando ambientes de Teste e Produção na AWS com Ansible e Terraform.
+IaC. Creating development and production environments with Ansible and Terraform using modules and variables.
+
